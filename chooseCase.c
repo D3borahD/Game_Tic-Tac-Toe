@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "chooseCase.h"
 
-void chooseCase(int *player, int *caseNumber, char board[9]){
+void chooseCase(int *player, int *caseNumber, char board[10]){
     switch(*caseNumber){
         case 1 :
             if (*player == 1) {
