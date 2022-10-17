@@ -1,12 +1,22 @@
 #include <stdio.h>
-#include "chooseCase.h"
-#include "roundPlayer.h"
-#include "boardView.h"
 
+#include <string.h>
+#include "Headers/chooseCase.h"
+#include "Headers/roundPlayer.h"
+#include "Headers/boardView.h"
+#include "Headers/endMessage.h"
+#include "Headers/main.h"
+
+#define TAILLE_MAX 10
+
+/*printf("pointeur %d \n", pointeurCaseNumber);  // return l'adresse de la variable (177450)
+ printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
+ printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
 
 #define TAILLE_MAX 10
 
 int main(int argc, const char * argv[]) {
+
 
     char board[TAILLE_MAX]={'.', '.', '.', '.', '.', '.', '.', '.', '.', '\0'};
 
@@ -23,23 +33,31 @@ int main(int argc, const char * argv[]) {
         // affiche le tour du joueur
         roundPlayer(&player);
         scanf("%d", &caseNumber);
-        // saisir du choix de case pour le joueur
+
+
+
         chooseCase(&player, &caseNumber, &board);
+
+
+        // **************** //
+        // à faire : tant que board == x ou o alors demande
+
+     /*   if(board[0] == 'x' || board[0] == 'o' ){
+            printf("cette case est déjà occupée");
+            roundPlayer(&player);
+            scanf("%d", &caseNumber);
+        } else {
+            chooseCase(&player, &caseNumber, &board);
+        }*/
+
+     // **************** //
+
     }
     boardView(board);
-    printf("La partie est terminée");
+    printf("La partie est terminée, personne n'a gagné\n");
 
-
-
-
-
-
-
-        /*printf("pointeur %d \n", pointeurCaseNumber);  // return l'adresse de la variable (177450)
-        printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
-        printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
-
-
+    // rendre la variable dynamique !!!!!
+    endMessage(2);
 
 
     return 0;
