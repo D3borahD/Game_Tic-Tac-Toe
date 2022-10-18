@@ -28,8 +28,11 @@ int main(int argc, const char * argv[]) {
     printf("Bienvenue sur le Tic Tac Toe !\n\n");
 
     for (int i = 0; i < TAILLE_MAX-1; i++) {
+
+
         // affiche le plateau de jeu
         boardView(board);
+
         // affiche le tour du joueur
         roundPlayer(&player);
         scanf("%d", &caseNumber);
@@ -38,19 +41,14 @@ int main(int argc, const char * argv[]) {
 
         chooseCase(&player, &caseNumber, &board);
 
-
-        // **************** //
-        // à faire : tant que board == x ou o alors demande
-
-     /*   if(board[0] == 'x' || board[0] == 'o' ){
-            printf("cette case est déjà occupée");
-            roundPlayer(&player);
-            scanf("%d", &caseNumber);
-        } else {
-            chooseCase(&player, &caseNumber, &board);
+      /*  if (board[numberCase] == '.'){
+            printf("je suis déjà pris");
         }*/
 
-     // **************** //
+
+
+
+
 
     }
     boardView(board);

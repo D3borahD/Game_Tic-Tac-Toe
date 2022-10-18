@@ -7,7 +7,11 @@
 
 
 void chooseCase(int *player, int *caseNumber, char board[10]){
-    switch(*caseNumber){
+    int numberCase = *caseNumber - 1;
+    if(board[numberCase] != '.'){
+        printf("Cette case n'est pas disponible !\n\n");
+    } else {
+        switch(*caseNumber){
             case 1 :
                 if (*player == 1) {
                     board[0] = 'x';
@@ -93,4 +97,5 @@ void chooseCase(int *player, int *caseNumber, char board[10]){
                 printf("je ne suis pas une case");
                 break;
         }
+    }
 }
