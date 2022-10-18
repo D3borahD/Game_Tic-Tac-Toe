@@ -11,7 +11,7 @@ void endMessage(int *player){
     int cat2[] = {40, 61, 94, 46, 94, 61, 41, 60};
     int cat3[] = {92,95, 40, 34,41, 95,40, 34,41};
 
-    if(player == 1) {
+    if(player == 3) {
         winner = 1;
     } else {
         winner = 2;
