@@ -14,8 +14,6 @@
  printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
  printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
 
-
-
 int main(int argc, const char * argv[]) {
 
 
