@@ -1,7 +1,7 @@
 //
 // Created by Deborah DOUILLET on 15/10/2022.
 //
-#include <string.h>
+
 #include <stdio.h>
 #include "../Headers/chooseCase.h"
 
