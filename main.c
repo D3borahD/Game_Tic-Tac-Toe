@@ -1,12 +1,23 @@
 #include <stdio.h>
-#include "chooseCase.h"
-#include "roundPlayer.h"
-#include "boardView.h"
 
+#include <string.h>
+#include "Headers/chooseCase.h"
+#include "Headers/roundPlayer.h"
+#include "Headers/boardView.h"
+#include "Headers/endMessage.h"
+#include "Headers/winner.h"
+#include "Headers/main.h"
 
 #define TAILLE_MAX 10
 
+/*printf("pointeur %d \n", pointeurCaseNumber);  // return l'adresse de la variable (177450)
+ printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
+ printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
+
+
+
 int main(int argc, const char * argv[]) {
+
 
     char board[TAILLE_MAX]={'.', '.', '.', '.', '.', '.', '.', '.', '.', '\0'};
 
@@ -20,26 +31,25 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < TAILLE_MAX-1; i++) {
         // affiche le plateau de jeu
         boardView(board);
+
         // affiche le tour du joueur
         roundPlayer(&player);
         scanf("%d", &caseNumber);
-        // saisir du choix de case pour le joueur
+
+
+
         chooseCase(&player, &caseNumber, &board);
+
+        // gestion victoire
+        winner(&player, &board);
+        if(player == 2 || player == 3) {
+            break;
+        }
     }
     boardView(board);
-    printf("La partie est terminée");
+   // printf("La partie est terminée, personne n'a gagné\n");
 
-
-
-
-
-
-
-        /*printf("pointeur %d \n", pointeurCaseNumber);  // return l'adresse de la variable (177450)
-        printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
-        printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
-
-
+    endMessage(player);
 
 
     return 0;
