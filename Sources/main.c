@@ -10,19 +10,35 @@
 
 #define TAILLE_MAX 10
 
+
+
 /*printf("pointeur %d \n", pointeurCaseNumber);  // return l'adresse de la variable (177450)
  printf("&pointeur %d \n", &pointeurCaseNumber); // return l'adress du pointeur (3)
  printf("*pointeur %d", *pointeurCaseNumber);  // return valeur de la variable*/
 
-int main(int argc, const char * argv[]) {
+/*
+ * TO DO :
+ * - gestion de l'erreur de saisie (saisie d'un lettre = fin du jeu)
+ * - améliorer gestion du role player
+ * - améliorer la gestion du calcul de victoire
+ * - faire un IA
+ * - améliorer le board (A1)
+ * - gestion du message en cas de nul
+*/
 
+int main(int argc, const char * argv[]) {
 
     char board[TAILLE_MAX]={'.', '.', '.', '.', '.', '.', '.', '.', '.', '\0'};
 
-    int caseNumber=0;
-    //int *pointeurCaseNumber = &caseNumber;
 
+
+
+
+
+    int caseNumber=0;
     int player = 1;
+
+
 
     printf("Bienvenue sur le Tic Tac Toe !\n\n");
 
@@ -33,8 +49,6 @@ int main(int argc, const char * argv[]) {
         // affiche le tour du joueur
         roundPlayer(&player);
         scanf("%d", &caseNumber);
-
-
 
         chooseCase(&player, &caseNumber, &board);
 
@@ -48,7 +62,6 @@ int main(int argc, const char * argv[]) {
    // printf("La partie est terminée, personne n'a gagné\n");
 
     endMessage(player);
-
 
     return 0;
 }
