@@ -5,6 +5,6 @@
 #ifndef TIC_TAC_TOE_WINNER_H
 #define TIC_TAC_TOE_WINNER_H
 
-int winner (int *player, char board[]);
+int winner (int *player, char board[], int *caseNumber);
 
 #endif //TIC_TAC_TOE_WINNER_H

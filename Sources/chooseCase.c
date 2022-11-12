@@ -20,3 +20,4 @@ void chooseCase(int *player, int *caseNumber, char board[10]){
         }
     }
 }
+
